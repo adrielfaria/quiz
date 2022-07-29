@@ -16,6 +16,27 @@ const QuizOne = () => {
           };
     };
 
+    if (isFinished) {
+      if (score < 25) return(
+      <main>
+            <span className='respuesta'>A</span>
+            <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+      </main> 
+      );
+      if (score < 32) return(
+        <main>
+              <span className='respuesta'>B</span>
+              <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+        </main>
+        );
+        if (score <= 40) return(
+          <main>
+                <span className='respuesta'>C</span>
+                <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+          </main>
+          );
+    };
+
     return (
         <div className='test-container'>
             <h2>This is the first quiz</h2>
@@ -36,4 +57,4 @@ const QuizOne = () => {
     );
 };
 
-export default QuizOne
+export default QuizOne;

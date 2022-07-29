@@ -1,13 +1,15 @@
+import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
+
 
 const Navigation = () => {
     return (
-      <div>
+      <Fragment>
         <div>
-          <h1>I am the navigation bar</h1>
+          <h2>I am the navigation bar</h2>
         </div>
         <Outlet />
-      </div>
+      </Fragment>
     );
   };
 
