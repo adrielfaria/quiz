@@ -1,10 +1,17 @@
-import './App.css';
-import Directory from './components/directory/directory.component';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import Home from './routes/home/home.component';
+import QuizOne from './components/quiz-one/quiz-one.component';
+import Navigation from './routes/navigation/navigation.component';
 
 function App() {
   return (
-    <div className="App">
-      <Directory/>
+    <div className='app'>
+      <Routes>
+        <Route path='/' element = {<Navigation/>}>
+          <Route index element={<Home/>} />
+          <Route path='quiz-one' element={<QuizOne/>} />         
+        </Route>
+      </Routes>
     </div>
   );
 };
