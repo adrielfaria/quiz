@@ -1,6 +1,8 @@
 import questions from "../questions/quiz-one-questions/quiz-one-questions.component";
 import { useState } from "react";
 
+import { TestContainer, Answer, ButtonQuiz, RightSide, LeftSide, QuestionTitle  } from "./quiz-one.styles";
+
 const QuizOne = () => {
     const [actualQuestion, setActualQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -19,41 +21,41 @@ const QuizOne = () => {
     if (isFinished) {
       if (score < 25) return(
       <main>
-            <span className='respuesta'>A</span>
-            <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+            <Answer>A</Answer>
+            <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
       </main> 
       );
       if (score < 32) return(
         <main>
-              <span className='respuesta'>B</span>
-              <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+              <Answer>B</Answer>
+              <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
         </main>
         );
         if (score <= 40) return(
           <main>
-                <span className='respuesta'>C</span>
-                <button onClick={() => window.location.href = '/'}> Go to the home page </button>
+                <Answer>C</Answer>
+                <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
           </main>
           );
     };
 
     return (
-        <div className='test-container'>
+        <TestContainer>
             <h2>This is the first quiz</h2>
-            <div className='left-side'>
-                <div className='question-number'>
-                    <span>Question {actualQuestion + 1} from</span> {questions.length}
-                </div>
-                <div className='question-title'>{questions[actualQuestion].title}</div>
-                </div>
-                <div className='right-side'>
-                {questions[actualQuestion].options.map((respuesta) => (
-                    <button key={respuesta.textoRespuesta} onClick={(event) => handleAnswerSubmit(respuesta.isCorrect, event)}>
-                    {respuesta.textoRespuesta}
-                    </button>
-            ))}
-            </div>
-      </div>
+            <LeftSide>
+              <div className='questionNumber'>
+                  <span>Question {actualQuestion + 1} from</span> {questions.length}
+              </div>
+              <QuestionTitle>{questions[actualQuestion].title}</QuestionTitle>
+            </LeftSide>
+              <RightSide>
+              {questions[actualQuestion].options.map((respuesta) => (
+                  <ButtonQuiz key={respuesta.textoRespuesta} onClick={(event) => handleAnswerSubmit(respuesta.isCorrect, event)}>
+                  {respuesta.textoRespuesta}
+                  </ButtonQuiz>
+          ))}
+            </RightSide>
+      </TestContainer>
     );
 };
 
