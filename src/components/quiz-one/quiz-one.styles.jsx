@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const TestContainer = styled.div`
+    margin: 50px 10%;
     background-color: #252d4a ;
     max-width: 100%;
     min-width: 450px;
@@ -60,5 +61,21 @@ export const Answer = styled.div`
     font-size: 30px;
     color: #fff;
     margin-bottom: 20px;
+`;
+
+export const Result = styled.div`
+    margin: 50px 10%;
+    background-color: #252d4a ;
+    max-width: 100%;
+    min-width: 450px;
+    height: min-content;
+    min-height: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    justify-content: space-evenly;
+    img{
+        width: 200px;
+    }   
 `;
 

@@ -1,8 +1,10 @@
+import { DirectoryContainer } from "./directory.styless";
+
 const Directory = () => {
     return (
-        <div>
-            <h3>Test directory page</h3>
-        </div>
+        <DirectoryContainer>
+            <h2>Below you can find the list of available tests</h2>
+        </DirectoryContainer>
     );
 };
 

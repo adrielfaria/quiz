@@ -1,7 +1,7 @@
 import questions from "../questions/quiz-one-questions/quiz-one-questions.component";
 import { useState } from "react";
 
-import { TestContainer, Answer, ButtonQuiz, RightSide, LeftSide, QuestionTitle  } from "./quiz-one.styles";
+import { TestContainer, Answer, ButtonQuiz, RightSide, LeftSide, QuestionTitle, Result  } from "./quiz-one.styles";
 
 const QuizOne = () => {
     const [actualQuestion, setActualQuestion] = useState(0);
@@ -21,20 +21,26 @@ const QuizOne = () => {
     if (isFinished) {
       if (score < 25) return(
       <main>
-            <Answer>A</Answer>
-            <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
+            <Result>
+                <Answer>A</Answer>
+                <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
+           </Result>
       </main> 
       );
       if (score < 32) return(
         <main>
-              <Answer>B</Answer>
-              <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
+            <Result>
+                <Answer>B</Answer>
+                <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
+           </Result>
         </main>
         );
         if (score <= 40) return(
           <main>
+            <Result>
                 <Answer>C</Answer>
                 <ButtonQuiz onClick={() => window.location.href = '/'}> Go to the home page </ButtonQuiz>
+           </Result>
           </main>
           );
     };

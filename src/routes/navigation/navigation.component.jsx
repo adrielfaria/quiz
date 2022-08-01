@@ -7,7 +7,7 @@ const Navigation = () => {
     return (
       <Fragment>
           <NavContainer>
-            <h2>I am the navigation bar</h2>
+            <h2>Este es el titulo de la pagina</h2>
           </NavContainer>
         <Outlet />
       </Fragment>

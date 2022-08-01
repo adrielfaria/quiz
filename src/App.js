@@ -7,7 +7,7 @@ import Navigation from './routes/navigation/navigation.component';
 
 function App() {
   return (
-    <div className='app'>
+    <div className='global'>
       <Routes>
         <Route path='/' element = {<Navigation/>}>
           <Route index element={<Home/>} />

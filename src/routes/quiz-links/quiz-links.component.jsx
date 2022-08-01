@@ -1,17 +1,20 @@
 import { Fragment } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+import { LinkContainer, LinksContainer } from "./quiz-links.styles";
 
 const QuizLinks = () => {
     return (
       <Fragment>
-        <div>
-          <Link to="quiz-one">
+        <LinksContainer>
+          <LinkContainer to="quiz-one">
                 <h2>Go to quiz one</h2>
-            </Link>
-            <Link to="quiz-two">
+            </LinkContainer>
+            <LinkContainer to="quiz-two">
                 <h2>Go to quiz two</h2>
-            </Link>
-        </div>
+            </LinkContainer>
+            
+        </LinksContainer>
         <Outlet />
       </Fragment>
     );
